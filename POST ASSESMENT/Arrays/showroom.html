@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="list.js"></script>
+    
+    <script>
+    var tvs=["Sony","Samsung","Onida"];
+        function tv(){
+        document.write(tvs);
+        document.newdiv.write(tvs);
+    }
+    function mobile(){
+        document.newdiv.write(mobiles);
+    }
+    function laptop(){
+        document.newdiv.write(laptops);
+    }
+
+    </script>
+</head>
+<body>
+    <h2>ELECTRONICS AND APPLIANCES</h2>
+    Select Option 
+    <input list="category" name="cat"/>
+    <datalist id="category">
+        <option value="TV" onclick="tv()" onselect="tv()" onmousemove="tv()" onshow="tv()">tv</option>
+        <option value="Mobile" onclick="mobile()">mobile</option>
+        <option value="Laptop" onclick="laptop()" onselect="laptop()">laptop</option>
+    </datalist>
+    <div id="newdiv"></div>
+</body>
+</html>

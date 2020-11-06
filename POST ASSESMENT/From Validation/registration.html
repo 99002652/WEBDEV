@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <script src="array.js"></script>
+    <script>
+        function validate(){
+            var nam=document.getElementById("name").value;
+            var pass=document.getElementById("password").value;
+            var ph=document.getElementById("phone").value;
+            var ema=document.getElementById("email").value;
+            if((nam=="")||(nam.length<5)||(nam.length>15))
+            {
+                alert("Enter Your Name");
+                document.myform.uname.focus();
+            }
+            else if(arr.indexOf(nam)>-1){alert("Already Exists")}
+            else if(pass="")
+            {
+                alert("Enter Password");
+                document.myform.upassword.focus();
+            }
+            else if((ph.length)!=10)
+            {
+                alert("Enter 10 digit number");
+                document.myfrom.unumber.focus();
+            }
+            else if(ema=="")
+            {
+                alert("Enter Your Email Id");
+                document.myfrom.uemail.focus();
+            }
+            else{
+                alert("Successfully Registered");
+                arr.push(nam);
+                document.write(arr);
+                document.myform.submit();
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <form action=".html" method="POST" name="myform">
+        <table border="5" cellspacing=5 cellpadding=5> 
+        <tr> <td>Enter Username  <input type="text" name=uname id=name min="5" max="15"/><br /></td></tr>
+        <tr><td>Enter Password  <input type="password" name=upassword id=password><br/></td></tr>
+        <tr><td>Enter Phone     <input type="phone" name=unumber id=phone pattern="[0-9]{10}" name="phone"><br></td></tr>
+        <tr><td>Enter Email     <input type="email" name=uemail id=email pattern="@"><br></td></tr>
+        <tr><td><input type="button" value="Submit" onclick="validate()"></td></tr>
+        </table>
+    </form>
+</body>
+</html>
